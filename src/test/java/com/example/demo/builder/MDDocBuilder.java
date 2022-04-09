@@ -12,7 +12,7 @@ import org.beetl.sql.gen.simple.BaseTemplateSourceBuilder;
 import java.io.Writer;
 
 public class MDDocBuilder extends BaseTemplateSourceBuilder {
-    public static String mapperTemplate = "doc.btl";
+    public static String mapperTemplate = "doc.html";
 
     public MDDocBuilder() {
         super("entity");

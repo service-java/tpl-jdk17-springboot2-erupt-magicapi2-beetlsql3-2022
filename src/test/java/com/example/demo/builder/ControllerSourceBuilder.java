@@ -10,7 +10,7 @@ import org.beetl.sql.gen.simple.BaseTemplateSourceBuilder;
 import java.io.Writer;
 
 public class ControllerSourceBuilder extends BaseTemplateSourceBuilder {
-    public static String pojoPath = "controller.btl";
+    public static String pojoPath = "controller.html";
     private boolean alias = false;
 
     public ControllerSourceBuilder() {

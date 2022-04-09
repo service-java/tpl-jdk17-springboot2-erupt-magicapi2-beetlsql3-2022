@@ -8,8 +8,8 @@ import org.beetl.sql.gen.SourceConfig;
 import org.beetl.sql.gen.simple.BaseTemplateSourceBuilder;
 
 public class EntitySourceBuilder extends BaseTemplateSourceBuilder {
-    public static String pojoPath = "pojo.btl";
-    public static String pojoAliasPath = "pojoAlias.btl";
+    public static String pojoPath = "pojo.html";
+    public static String pojoAliasPath = "pojoAlias.html";
     private boolean alias = false;
 
     public EntitySourceBuilder() {

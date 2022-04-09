@@ -11,11 +11,9 @@ import ${impCls};
 @Table(name="${has(catalog)?(catalog+".")}${table}")
 public class ${className} implements java.io.Serializable} {
 
-	// alias
 	<%for(attr in attrs){%>
 	public static final String ALIAS_${attr.colName} = "${attr.colName}";
 	<%}%>
 
-   <%include("pojoAttribute.btl"){}%>
-
+   <%include("pojoAttribute.html"){}%>
 }

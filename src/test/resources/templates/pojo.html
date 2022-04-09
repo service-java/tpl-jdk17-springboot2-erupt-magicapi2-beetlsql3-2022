@@ -38,14 +38,9 @@ import xyz.erupt.annotation.sub_field.sub_edit.Search;
 // @Accessors(chain = true)
 @Table(name="${has(catalog)?(catalog+".")}${table}")
 @Erupt(name = "${className}"
-	, power = @Power(
-	    export = true
-	    , importable = true
-	  )
+	, power = @Power(export = true, importable = true)
 )
 @Entity
 public class ${className} implements java.io.Serializable {
-
-	<%include("pojoAttribute.btl"){}%>
-
+	<%include("pojoAttribute.html"){}%>
 }

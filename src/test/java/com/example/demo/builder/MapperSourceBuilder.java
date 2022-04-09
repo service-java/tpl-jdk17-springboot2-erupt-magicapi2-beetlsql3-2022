@@ -9,7 +9,7 @@ import org.beetl.sql.gen.SourceConfig;
 import org.beetl.sql.gen.simple.BaseTemplateSourceBuilder;
 
 public class MapperSourceBuilder extends BaseTemplateSourceBuilder {
-    public static String mapperPath = "mapper.btl";
+    public static String mapperPath = "mapper.html";
     String suffix;
 
     public MapperSourceBuilder() {

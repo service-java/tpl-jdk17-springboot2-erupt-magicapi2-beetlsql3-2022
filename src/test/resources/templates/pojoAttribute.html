@@ -24,12 +24,9 @@
     @EruptField(
             views = @View(title = "${attr.comment}"),
             edit = @Edit(title = "${attr.comment}"
-                    // , notNull = true
-                    ${ (attr.javaType == "Date" || attr.javaType == "LocalDateTime") ? ", type = EditType.DATE, dateType = @DateType(type = DateType.Type.DATE)" : null}
+                    // , notNull = true ${ (attr.javaType == "Date" || attr.javaType == "LocalDateTime") ? "\n                    , type = EditType.DATE, dateType = @DateType(type = DateType.Type.DATE)" : null}
                     , search = @Search(vague = true)
             )
     )
 	private ${attr.javaType} ${attr.name};
-
-
 <%}%>
