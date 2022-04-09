@@ -41,7 +41,7 @@ beetlsql:
     dev: true
     basePackage: com.example.**.mapper
     daoSuffix: Mapper
-    sqlPath: mdsql
+    sqlPath: sql
     nameConversion: org.beetl.sql.core.UnderlinedNameConversion
     dbStyle: org.beetl.sql.core.db.MySqlStyle
     sqlFileCharset: utf-8
