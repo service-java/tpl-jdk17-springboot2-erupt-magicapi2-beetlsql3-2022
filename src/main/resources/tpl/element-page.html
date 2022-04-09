@@ -47,12 +47,12 @@
             };
         },
         mounted() {
-            axios.get("/magic-api/test/page?pageNum=1&pageSize=10", {
+            axios.get("/magic-api/user/page?pageNum=1&pageSize=10", {
                 headers: {
                     token: parent.getAppToken().token
                 }
             }).then((res) => {
-                console.log(res.data)
+                console.log(res.data.data)
             })
         }
     });

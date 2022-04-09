@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import xyz.erupt.core.annotation.EruptRecordOperate;
+import xyz.erupt.core.annotation.EruptRouter;
 import xyz.erupt.core.constant.EruptRestPath;
 
 @Log
@@ -23,8 +25,8 @@ public class UserController {
 
     @GetMapping("/pageUser")
     @ResponseBody
-    // @EruptRecordOperate("登录可调用")
-    // @EruptRouter(verifyType = EruptRouter.VerifyType.LOGIN, authIndex = 0)
+    @EruptRecordOperate("登录可调用")
+    @EruptRouter(verifyType = EruptRouter.VerifyType.LOGIN, authIndex = 0)
     public PageResult<User> pageUser(Integer pageNumber, Integer pageSize) {
         return userMapper.pageUserCols(DefaultPageRequest.of(pageNumber, pageSize), User._cols);
     }
