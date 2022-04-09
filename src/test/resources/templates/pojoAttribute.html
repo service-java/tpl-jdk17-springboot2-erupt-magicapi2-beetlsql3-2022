@@ -22,8 +22,8 @@
 	@GenericGenerator(name = "generator", strategy = "native")
     <%}%>
     @EruptField(
-            views = @View(title = "${attr.comment}"),
-            edit = @Edit(title = "${attr.comment}"
+            views = @View(title = "${!isEmpty(attr.comment)?attr.comment:attr.name}"),
+            edit = @Edit(title = "${!isEmpty(attr.comment)?attr.comment:attr.name}"
                     // , notNull = true ${ (attr.javaType == "Date" || attr.javaType == "LocalDateTime") ? "\n                    , type = EditType.DATE, dateType = @DateType(type = DateType.Type.DATE)" : null}
                     , search = @Search(vague = true)
             )
