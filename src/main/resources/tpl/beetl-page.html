@@ -1,0 +1,30 @@
+<% layout("./_layout.html", {}) { %>
+
+<div id="app">
+    <template>
+        beetlsql页面
+    </template>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: "Hello Element-UI",
+            };
+        },
+        mounted() {
+            axios.get("/erupt-api/zhihu/pageUser?pageNumber=2&pageSize=30", {
+                headers: {
+                    token: parent.getAppToken().token
+                }
+            }).then((res) => {
+                console.log(res.data)
+            })
+        }
+    });
+</script>
+
+
+<% } %>

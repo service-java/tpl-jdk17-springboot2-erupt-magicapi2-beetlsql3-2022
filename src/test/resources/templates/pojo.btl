@@ -1,0 +1,51 @@
+package ${package};
+
+<%for(impCls in imports){%>
+import ${impCls};
+<%}%>
+
+import java.util.Date;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
+import javax.persistence.*;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.GenericGenerator;
+
+import xyz.erupt.annotation.Erupt;
+import xyz.erupt.annotation.EruptField;
+import xyz.erupt.annotation.sub_erupt.Power;
+import xyz.erupt.annotation.sub_field.Edit;
+import xyz.erupt.annotation.sub_field.EditType;
+import xyz.erupt.annotation.sub_field.View;
+import xyz.erupt.annotation.sub_field.sub_edit.DateType;
+import xyz.erupt.annotation.sub_field.sub_edit.Search;
+
+/*
+* ${comment}
+* @Date ${date(),"yyyy-MM-dd"}
+*/
+
+@DynamicUpdate
+@DynamicInsert
+@Getter
+@Setter
+// @Accessors(chain = true)
+@Table(name="${has(catalog)?(catalog+".")}${table}")
+@Erupt(name = "${className}"
+	, power = @Power(
+	    export = true
+	    , importable = true
+	  )
+)
+@Entity
+public class ${className} implements java.io.Serializable {
+
+	<%include("pojoAttribute.btl"){}%>
+
+}
