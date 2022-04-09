@@ -55,12 +55,12 @@ public class GenCodeUtil {
         SourceBuilder entityBuilder = new EntitySourceBuilder();
         SourceBuilder mapperBuilder = new MapperSourceBuilder();
         SourceBuilder controllerBuilder = new ControllerSourceBuilder();
-        // SourceBuilder mdBuilder = new MDSourceBuilder();
+        SourceBuilder mdBuilder = new MDSourceBuilder();
 
         sourceBuilder.add(entityBuilder);
         sourceBuilder.add(mapperBuilder);
         sourceBuilder.add(controllerBuilder);
-        // sourceBuilder.add(mdBuilder);
+        sourceBuilder.add(mdBuilder);
 
         SourceConfig config = new SourceConfig(sqlManager, sourceBuilder);
         // 日期格式指定
