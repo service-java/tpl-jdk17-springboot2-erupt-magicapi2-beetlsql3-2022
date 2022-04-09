@@ -6,6 +6,7 @@ import org.beetl.sql.core.page.PageResult;
 import org.beetl.sql.mapper.BaseMapper;
 import org.beetl.sql.mapper.annotation.Template;
 
+import java.util.List;
 
 
 /*
@@ -17,10 +18,11 @@ public interface UserMapper extends BaseMapper<User> {
     @Template("""
 select
 -- @pageTag(){
-  *
+  #{text("${col}")}
 -- @}
 from user
         """)
     PageResult<User> pageUserCols(PageRequest pageRequest, String cols);
 
+    List<User> selectUser(User user);
 }

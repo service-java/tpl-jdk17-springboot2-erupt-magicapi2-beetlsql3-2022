@@ -1,12 +1,15 @@
 package ${package};
-import org.beetl.sql.mapper.BaseMapper;
-import org.beetl.sql.core.page.PageRequest;
-import org.beetl.sql.core.page.PageResult;
-import org.beetl.sql.mapper.annotation.Template;
 
 <%for(impCls in imports){%>
 import ${impCls};
 <%}%>
+
+import java.util.List;
+
+import org.beetl.sql.mapper.BaseMapper;
+import org.beetl.sql.core.page.PageRequest;
+import org.beetl.sql.core.page.PageResult;
+import org.beetl.sql.mapper.annotation.Template;
 
 /*
 *
@@ -17,10 +20,12 @@ public interface ${className} extends BaseMapper<${entityClass}> {
     @Template("""
 select
 -- @pageTag(){
-  *
+   *
 -- @}
 from ${tableName}
         """)
     PageResult<${entityClass}> page${entityClass}Cols(PageRequest pageRequest, String cols);
+
+    List<${entityClass}> select${entityClass}(${entityClass} ${lowerFirst(entityClass)});
 
 }

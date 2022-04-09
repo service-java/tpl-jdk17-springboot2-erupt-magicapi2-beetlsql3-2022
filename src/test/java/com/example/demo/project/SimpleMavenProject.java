@@ -22,8 +22,8 @@ public class SimpleMavenProject extends BaseProject {
         FileWriter writer = null;
         String src;
         String output;
-        if (sourceBuilderName.equals("md")) {
-            src = this.root + File.separator + "src/main/resources/mdsql-temp";
+        if (sourceBuilderName.equals("mapperSql")) {
+            src = this.root + File.separator + "src/main/resources/sql-temp";
             output = src + File.separator + targetName;
 
             try {

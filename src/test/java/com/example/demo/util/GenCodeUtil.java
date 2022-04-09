@@ -1,9 +1,6 @@
 package com.example.demo.util;
 
-import com.example.demo.builder.ControllerSourceBuilder;
-import com.example.demo.builder.EntitySourceBuilder;
-import com.example.demo.builder.MDDocBuilder;
-import com.example.demo.builder.MapperSourceBuilder;
+import com.example.demo.builder.*;
 import com.example.demo.project.SimpleMavenProject;
 import lombok.extern.java.Log;
 import org.beetl.core.GroupTemplate;
@@ -15,7 +12,6 @@ import org.beetl.sql.ext.DebugInterceptor;
 import org.beetl.sql.gen.SourceBuilder;
 import org.beetl.sql.gen.SourceConfig;
 import org.beetl.sql.gen.simple.BaseTemplateSourceBuilder;
-import org.beetl.sql.gen.simple.MDSourceBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

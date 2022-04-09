@@ -2,6 +2,8 @@ package com.example.demo.builder;
 
 import java.io.Writer;
 import java.util.Arrays;
+
+import com.example.demo.util.LowerFirstFnUtil;
 import org.beetl.core.Template;
 import org.beetl.sql.gen.BaseProject;
 import org.beetl.sql.gen.Entity;
@@ -24,6 +26,9 @@ public class MapperSourceBuilder extends BaseTemplateSourceBuilder {
 
     public void generate(BaseProject project, SourceConfig config, Entity entity) {
         Template template = groupTemplate.getTemplate(mapperPath);
+        // 注册方法
+        groupTemplate.registerFunction("lowerFirst", new LowerFirstFnUtil());
+
         String mapperClass = entity.getName() + this.suffix;
         template.binding("className", mapperClass);
         template.binding("tableName", entity.getTableName());
