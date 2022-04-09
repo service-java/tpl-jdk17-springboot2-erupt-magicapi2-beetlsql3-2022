@@ -25,6 +25,7 @@ class GenCodeTests {
     String password;
 
     String tplPath = "/src/test/resources/templates/";
+//    String basePackageName = "com.example.demo";
     String basePackageName = "com.beetlsqlcodegen.demo";
 
     // 要生成的表格名

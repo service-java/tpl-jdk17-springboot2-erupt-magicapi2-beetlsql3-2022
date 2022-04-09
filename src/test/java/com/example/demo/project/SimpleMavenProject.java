@@ -23,7 +23,7 @@ public class SimpleMavenProject extends BaseProject {
         String src;
         String output;
         if (sourceBuilderName.equals("mapperSql")) {
-            src = this.root + File.separator + "src/main/resources/sql-temp";
+            src = this.root + File.separator + "src/main/resources/mdsql-temp";
             output = src + File.separator + targetName;
 
             try {

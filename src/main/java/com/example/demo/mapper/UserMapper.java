@@ -18,7 +18,7 @@ public interface UserMapper extends BaseMapper<User> {
     @Template("""
 select
 -- @pageTag(){
-  #{text("${col}")}
+  ${col}
 -- @}
 from user
         """)
