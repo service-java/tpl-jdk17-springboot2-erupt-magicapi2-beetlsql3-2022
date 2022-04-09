@@ -52,14 +52,30 @@ source /etc/profile
 # 代码生成
 
 ```java
-// GenCodeTests.java
+// src\test\java\com\example\demo\GenCodeTests.java
+// 1) 指定要生成的表
 List<String> tableNames = Arrays.asList(
     "user",
     "user2"
 );
 
+// 2) 生成代码
 @Test
 void genCode() {
 
 }
+
+===
+// 3) 将生成代码拖拽到合适位置
+├─controller
+│      UserController.java
+│
+├─doc
+│      user.doc.md
+│
+├─entity
+│      User.java
+│
+└─mapper 
+       UserMapper.java
 ```
