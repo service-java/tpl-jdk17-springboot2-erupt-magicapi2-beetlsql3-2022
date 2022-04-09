@@ -16,4 +16,6 @@ window.eruptSiteConfig = {
     logoText: "erupt",
     //是否开启路由复用
     routerReuse: true,
+    // 是否展示版权信息（1.6.10及以后版本支持）
+    copyright: false,
 };

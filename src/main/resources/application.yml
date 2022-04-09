@@ -13,10 +13,15 @@ spring:
       max-lifetime: 290_000
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    open-in-view: true
     show-sql: true
     generate-ddl: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     database: mysql
+    properties:
+      hibernate:
+        format_sql: true
+
   flyway:
     enabled: true
     baseline-on-migrate: true
@@ -53,7 +58,7 @@ erupt-app:
   locales: [ "zh-CN","en-US"]
 
 erupt:
-  csrfInspect: true
+  csrfInspect: false
   redisSession: true
   uploadPath: D:/erupt/pictures
   keepUploadFileName: false
@@ -86,7 +91,7 @@ magic-api:
     - yyyy-MM-dd HH:mm:ss
     - yyyyMMddHHmmss
     - yyyyMMdd
-  response: |- 
+  response: |-
     {
       code,
       message: msg,
