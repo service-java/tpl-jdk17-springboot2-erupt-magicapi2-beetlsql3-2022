@@ -11,7 +11,7 @@ spring:
     password: 123456
 
 erupt:
-  uploadPath: /opt/erupt/pictures
+  uploadPath: D:/erupt/pictures
 
 magic-api:
   resource:
