@@ -50,7 +50,7 @@ public class GenCodeUtil {
         List<SourceBuilder> sourceBuilder = new ArrayList<>();
         SourceBuilder entityBuilder = new EntitySourceBuilder();
         SourceBuilder mapperBuilder = new MapperSourceBuilder();
-        SourceBuilder controllerBuilder = new ControllerSourceBuilder();
+        SourceBuilder controllerBuilder = new ControllerSourceBuilder(basePackageName);
         SourceBuilder mdBuilder = new MDSourceBuilder();
 
         sourceBuilder.add(entityBuilder);
