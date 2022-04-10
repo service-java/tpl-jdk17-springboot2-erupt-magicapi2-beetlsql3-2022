@@ -11,15 +11,15 @@ import java.io.Writer;
 
 public class ControllerSourceBuilder extends BaseTemplateSourceBuilder {
     public static String pojoPath = "controller.html";
-    private boolean alias = false;
+    public String basePackageName;
 
     public ControllerSourceBuilder() {
         super("controller");
     }
 
-    public ControllerSourceBuilder(boolean alias) {
+    public ControllerSourceBuilder(String basePackageName) {
         super("controller");
-        this.alias = alias;
+        this.basePackageName = basePackageName;
     }
 
     public void generate(BaseProject project, SourceConfig config, Entity entity) {
@@ -30,6 +30,7 @@ public class ControllerSourceBuilder extends BaseTemplateSourceBuilder {
         template.binding("className", entity.getName());
         template.binding("table", entity.getTableName());
         template.binding("package", project.getBasePackage(this.name));
+        template.binding("basePackageName", basePackageName);
         Writer writer = project.getWriterByName(this.name, entity.getName() + "Controller.java");
         template.renderTo(writer);
     }
